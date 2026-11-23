@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLOBAL VISA | Cronograma y Guiones de Producción</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            void: '#000000',
+            surface: '#060A10',
+            panel: '#0B121D',
+            cyanGlow: '#38BDF8',
+            skyDeep: '#0284C7',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Base oscura absoluta y scrollbars elegantes */
+    html, body {
+      background-color: #000000;
+      color: #F8FAFC;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #000000;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #0F2942;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #38BDF8;
+    }
+
+    /* Resaltado de palabras clave para memorización y énfasis vocal */
+    .kw {
+      color: #38BDF8;
+      font-weight: 700;
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.04) 0%, rgba(56, 189, 248, 0.18) 100%);
+      border-bottom: 1.5px solid rgba(56, 189, 248, 0.65);
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+
+    /* Efectos de brillo celeste sutiles */
+    .sky-border-glow {
+      box-shadow: 0 0 35px -10px rgba(56, 189, 248, 0.22);
+    }
+  </style>
+</head>
+<body class="bg-black text-slate-100 font-sans antialiased selection:bg-sky-500/30 selection:text-sky-200 min-h-screen flex flex-col">
+
+  <!-- Fondo ambiental con degradados celestes sobre negro -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 left-1/4 w-[520px] h-[520px] rounded-full bg-sky-500/10 blur-[140px]"></div>
+    <div class="absolute bottom-0 right-10 w-[440px] h-[440px] rounded-full bg-cyan-400/10 blur-[130px]"></div>
+  </div>
+
+  <!-- Barra Superior Corporativa -->
+  <header class="sticky top-0 z-30 bg-black/85 backdrop-blur-xl border-b border-sky-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <!-- Identidad de marca -->
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 via-cyan-500 to-blue-700 p-[1px] shadow-lg shadow-sky-500/20 shrink-0">
+          <div class="w-full h-full bg-black rounded-[11px] flex items-center justify-center">
+            <!-- Icono Globo / Fronteras -->
+            <svg class="w-6 h-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-lg sm:text-xl font-bold tracking-tight bg-gradient-to-r from-white via-sky-200 to-sky-400 bg-clip-text text-transparent">
+              GLOBAL VISA
+            </h1>
+            <span class="px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider rounded-full bg-sky-500/15 text-sky-300 border border-sky-400/30">
+              Cronograma de Videos
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 mt-0.5">
+            Ideas y guiones completos de los 12 videos · Gancho, desarrollo y cierre
+          </p>
+        </div>
+      </div>
+
+      <!-- Indicador Total de Piezas -->
+      <div class="flex items-center gap-2.5 bg-slate-950/90 border border-sky-500/20 rounded-xl px-4 py-2.5">
+        <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h1.5C5.496 19.5 6 18.996 6 18.375m-3.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-1.5A1.125 1.125 0 0118 18.375M20.625 4.5H3.375m17.25 0c.621 0 1.125.504 1.125 1.125M20.625 4.5h-1.5C18.504 4.5 18 5.004 18 5.625m3.75 0v1.5c0 .621-.504 1.125-1.125 1.125M3.375 4.5c-.621 0-1.125.504-1.125 1.125M3.375 4.5h1.5C5.496 4.5 6 5.004 6 5.625m-3.75 0v1.5c0 .621.504 1.125 1.125 1.125m0 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m1.5-3.75C5.496 8.25 6 7.746 6 7.125v-1.5M4.875 8.25H6m0 0h12m-12 0V7.125m12 1.125h1.125m-1.125 0V7.125m0 1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m1.125-3.75h-1.5m1.5 0h-1.5m-12 3.75h12m-12 0v4.5m12-4.5v4.5m-12 0h12m-12 0v1.5c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125v-1.5" />
+        </svg>
+        <span class="text-xs font-medium text-slate-300">Contenido:</span>
+        <span class="text-xs font-mono font-semibold text-sky-300">12 Ideas de Video</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal -->
+  <main class="relative z-10 flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+
+      <!-- COLUMNA IZQUIERDA: Selector de los 12 Videos -->
+      <aside class="lg:col-span-4 xl:col-span-4 bg-slate-950/80 border border-sky-500/20 rounded-2xl p-4 sm:p-5 backdrop-blur-md">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800/80">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+            </svg>
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-200">
+              Índice de Videos (1 – 12)
+            </h2>
+          </div>
+          <span class="text-[11px] font-mono text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded-md border border-sky-500/20">
+            12 Piezas
+          </span>
+        </div>
+
+        <!-- Filtro rápido de búsqueda -->
+        <div class="relative mb-3">
+          <svg class="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar tema, servicio o palabra..."
+            class="w-full bg-black/90 border border-slate-800 focus:border-sky-400/60 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none transition"
+          />
+        </div>
+
+        <!-- Lista de botones de videos -->
+        <div id="videoList" class="space-y-2 max-h-[62vh] overflow-y-auto pr-1">
+          <!-- Se renderiza dinámicamente con JS -->
+        </div>
+      </aside>
+
+      <!-- COLUMNA DERECHA: Visor Detallado de Guion -->
+      <section class="lg:col-span-8 xl:col-span-8">
+
+        <!-- Tarjeta Principal del Guion -->
+        <article id="scriptContainer" class="bg-gradient-to-b from-slate-950 via-[#040811] to-black border border-sky-500/25 rounded-2xl p-5 sm:p-7 sky-border-glow transition-all">
+          <!-- Encabezado del Video Seleccionado -->
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-5 border-b border-sky-500/15">
+            <div>
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                <span id="videoBadge" class="px-3 py-1 rounded-lg text-xs font-mono font-bold bg-gradient-to-r from-sky-500/20 to-cyan-500/10 text-sky-300 border border-sky-400/30">
+                  VIDEO 01
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-slate-900 text-slate-300 border border-slate-800">
+                  <svg class="w-3.5 h-3.5 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span id="videoDuration">28 – 32 segundos</span>
+                </span>
+              </div>
+              <h2 id="videoTitle" class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Proyección de viaje (Disneyland 2027)
+              </h2>
+            </div>
+
+            <!-- Navegación Anterior / Siguiente (Superior) -->
+            <div class="flex items-center gap-2 shrink-0">
+              <button
+                id="prevVideoBtnTop"
+                type="button"
+                class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 hover:bg-sky-500/20 border border-slate-800 hover:border-sky-400/50 text-xs font-medium text-slate-200 transition cursor-pointer"
+                title="Video anterior"
+              >
+                <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+                <span>Anterior</span>
+              </button>
+              <button
+                id="nextVideoBtnTop"
+                type="button"
+                class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 hover:bg-sky-500/20 border border-slate-800 hover:border-sky-400/50 text-xs font-medium text-slate-200 transition cursor-pointer"
+                title="Siguiente video"
+              >
+                <span>Siguiente</span>
+                <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Enfoque Estratégico del Video -->
+          <div class="mt-5 p-3.5 rounded-xl bg-sky-500/[0.06] border border-sky-400/20 flex items-start gap-3">
+            <div class="p-2 rounded-lg bg-sky-500/15 text-sky-400 shrink-0 mt-0.5">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75H6A2.25 2.25 0 003.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0120.25 6v1.5m0 9V18A2.25 2.25 0 0118 20.25h-1.5m-9 0H6A2.25 2.25 0 013.75 18v-1.5M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-sky-400 block">
+                Enfoque e Intención Comunicativa
+              </span>
+              <p id="videoFocus" class="text-xs sm:text-sm text-slate-300 mt-0.5 leading-relaxed">
+                Aspiracional y acción inmediata (convertir deseo pasivo en trámite real).
+              </p>
+            </div>
+          </div>
+
+          <!-- BLOQUES DEL GUION (GANCHO / DESARROLLO / CIERRE) -->
+          <div id="scriptBody" class="mt-6 space-y-5 text-base sm:text-lg leading-relaxed">
+
+            <!-- 1. GANCHO -->
+            <div class="rounded-2xl bg-black/90 border border-sky-400/30 p-4 sm:p-5 relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-300 to-sky-600"></div>
+              <div class="flex items-center justify-between gap-2 mb-2.5">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-cyan-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                  </svg>
+                  <span class="text-xs font-bold uppercase tracking-wider text-cyan-300">
+                    Gancho de Retención
+                  </span>
+                </div>
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2.5 py-0.5 rounded-md border border-slate-800">
+                  0 – 4 seg
+                </span>
+              </div>
+              <p id="hookText" class="text-white font-medium"></p>
+            </div>
+
+            <!-- 2. DESARROLLO -->
+            <div class="rounded-2xl bg-black/90 border border-slate-800 p-4 sm:p-5 relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-sky-500 to-blue-700"></div>
+              <div class="flex items-center justify-between gap-2 mb-2.5">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                  </svg>
+                  <span class="text-xs font-bold uppercase tracking-wider text-sky-400">
+                    Desarrollo Central
+                  </span>
+                </div>
+                <span id="devTime" class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2.5 py-0.5 rounded-md border border-slate-800">
+                  4 – 22 seg
+                </span>
+              </div>
+              <p id="devText" class="text-slate-200"></p>
+            </div>
+
+            <!-- 3. CIERRE -->
+            <div class="rounded-2xl bg-black/90 border border-slate-800 p-4 sm:p-5 relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-cyan-400"></div>
+              <div class="flex items-center justify-between gap-2 mb-2.5">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  <span class="text-xs font-bold uppercase tracking-wider text-sky-300">
+                    Cierre y Llamado a la Acción
+                  </span>
+                </div>
+                <span id="closeTime" class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2.5 py-0.5 rounded-md border border-slate-800">
+                  22 – 32 seg
+                </span>
+              </div>
+              <p id="closeText" class="text-slate-200"></p>
+            </div>
+
+          </div>
+
+          <!-- Barra de Navegación Inferior entre Videos (1 al 12) -->
+          <div class="mt-6 pt-5 border-t border-sky-500/15 flex items-center justify-between gap-3">
+            <button
+              id="prevVideoBtnBottom"
+              type="button"
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-sky-500/20 border border-slate-800 hover:border-sky-400/50 text-xs sm:text-sm font-medium text-slate-200 transition cursor-pointer"
+            >
+              <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+              <span>Idea Anterior</span>
+            </button>
+
+            <span id="videoCounterLabel" class="text-xs font-mono font-semibold text-sky-300 bg-sky-500/10 px-3 py-1.5 rounded-lg border border-sky-500/25">
+              1 / 12
+            </span>
+
+            <button
+              id="nextVideoBtnBottom"
+              type="button"
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-sky-500/20 to-cyan-500/20 hover:from-sky-500/30 hover:to-cyan-500/30 border border-sky-400/40 text-xs sm:text-sm font-medium text-white transition cursor-pointer"
+            >
+              <span>Siguiente Idea</span>
+              <svg class="w-4 h-4 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="relative z-10 border-t border-slate-900 bg-black/90 py-5 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
+      <span>GLOBAL VISA · Edificio Forum Zona Viva, 3ra avenida 10-80, Zona 10</span>
+      <span>Tel. 5433-0484 · Conectamos sueños, cruzamos fronteras</span>
+    </div>
+  </footer>
+
+  <script>
+    /**
+     * Base de datos íntegra de los 12 guiones de GLOBAL VISA.
+     * Se mantienen los textos exactos enviados por el usuario y se etiquetan
+     * con <span class="kw">...</span> las palabras clave de anclaje mental y énfasis.
+     */
+    const VIDEOS_DATA = [
+      {
+        id: 1,
+        code: "VIDEO 01",
+        title: "Proyección de viaje (Disneyland 2027)",
+        duration: "28 – 32 segundos",
+        devTime: "4 – 22 seg",
+        closeTime: "22 – 32 seg",
+        focus: "Aspiracional y acción inmediata: transformar el consumo pasivo en redes sociales en un trámite real y guiado.",
+        hook: '¿Te imaginas empezar este <span class="kw">2027</span> frente al <span class="kw">castillo de Disneyland</span> en vez de seguir viéndolo por <span class="kw">TikTok</span>?',
+        dev: 'Estar viendo los viajes de otros <span class="kw">no te sube al avión</span>, <span class="kw">moverte hoy sí</span>. Si quieres viajar a <span class="kw">Estados Unidos o México</span>, no vayas a ciegas ni cometas los <span class="kw">errores típicos de novato</span>. En <span class="kw">GLOBAL VISA</span> analizamos tu perfil para <span class="kw">potenciar tu punto fuerte</span>, llenamos tu <span class="kw">formulario DS-160 sin fallas</span> y hacemos un <span class="kw">simulacro de entrevista</span> para que llegues con <span class="kw">seguridad</span> y no sudando frío frente al cónsul.',
+        close: 'Con <span class="kw">10 años de experiencia</span>, te atendemos en la <span class="kw">3ra avenida 10-80, Zona 10, Edificio Forum Zona Viva</span>, o contáctanos al <span class="kw">5433-0484</span>. <span class="kw">GLOBAL VISA: conectamos sueños, cruzamos fronteras</span>.'
+      },
+      {
+        id: 2,
+        code: "VIDEO 02",
+        title: "Superar el miedo al rechazo",
+        duration: "26 – 30 segundos",
+        devTime: "4 – 20 seg",
+        closeTime: "20 – 30 seg",
+        focus: "Manejo de objeciones emocionales tanto para solicitantes primerizos como para perfiles con negaciones previas.",
+        hook: '¿Cuántas veces más vas a dejar que el <span class="kw">miedo a un "no"</span> te frene?',
+        dev: 'Ya sea tu <span class="kw">primera vez</span> o ya te hayan <span class="kw">negado la visa antes</span>, volver a intentar <span class="kw">sin estrategia es tirar tu dinero</span>. En <span class="kw">GLOBAL VISA</span> revisamos tu caso a fondo para entender <span class="kw">qué pasó realmente</span> y armar una <span class="kw">estrategia sólida</span> para <span class="kw">Estados Unidos o México</span>, entrenándote para que respondas con <span class="kw">claridad y sin improvisar</span> en tu entrevista.',
+        close: 'Respaldados por <span class="kw">10 años de trayectoria</span>, te esperamos en <span class="kw">Edificio Forum Zona Viva, 3ra avenida 10-80, Zona 10</span>, o al <span class="kw">5433-0484</span>. <span class="kw">GLOBAL VISA: conectamos sueños, cruzamos fronteras</span>.'
+      },
+      {
+        id: 3,
+        code: "VIDEO 03",
+        title: "Programación y revisión de acercamiento de citas",
+        duration: "22 – 25 segundos",
+        devTime: "4 – 15 seg",
+        closeTime: "15 – 25 seg",
+        focus: "Solución concreta a la frustración por tiempos de espera largos mediante monitoreo constante de disponibilidad.",
+        hook: '¿Tu cita para la visa quedó hasta <span class="kw">dentro de un siglo</span>?',
+        dev: 'Nadie quiere planear un viaje y ver que su <span class="kw">cita aparece lejísimos</span>. En <span class="kw">GLOBAL VISA</span> nos encargamos de <span class="kw">programar tu cita</span> y realizamos <span class="kw">revisiones constantes de acercamiento</span> para buscar <span class="kw">fechas más próximas</span> según la disponibilidad para <span class="kw">Estados Unidos o México</span>.',
+        close: 'Contamos con <span class="kw">10 años de experiencia</span>. Visítanos en la <span class="kw">3ra avenida 10-80, Zona 10, Edificio Forum Zona Viva</span>, o comunícate al <span class="kw">5433-0484</span>. <span class="kw">GLOBAL VISA: conectamos sueños, cruzamos fronteras</span>.'
+      },
+      {
+        id: 4,
+        code: "VIDEO 04",
+        title: "Pago de aranceles migratorios y asesoría general",
+        duration: "22 – 25 segundos",
+        devTime: "4 – 15 seg",
+        closeTime: "15 – 25 seg",
+        focus: "Simplificación administrativa para evitar errores iniciales en pagos bancarios y requisitos documentales.",
+        hook: '¿Te enredan los <span class="kw">pagos y los requisitos</span> antes de sacar tu visa?',
+        dev: 'Un <span class="kw">error al principio</span> te puede <span class="kw">atrasar todo el plan de viaje</span>. En <span class="kw">GLOBAL VISA</span> te damos <span class="kw">asesoría general clara</span> y gestionamos el <span class="kw">pago de tus aranceles migratorios</span> para que avances <span class="kw">ordenado y sin tropiezos</span> desde el primer día hacia <span class="kw">Estados Unidos o México</span>.',
+        close: 'Con <span class="kw">10 años de experiencia</span>, estamos ubicados en <span class="kw">Edificio Forum Zona Viva, 3ra avenida 10-80, Zona 10</span>, o contáctanos al <span class="kw">5433-0484</span>. <span class="kw">GLOBAL VISA: conectamos sueños, cruzamos fronteras</span>.'
+      },
+      {
+        id: 5,
+        code: "VIDEO 05",
+        title: "Proyección de viaje (Las Vegas 2027)",
+        duration: "23 – 26 segundos",
+        devTime: "4 – 16 seg",
+        closeTime: "16 – 26 seg",
+        focus: "Urgencia de planificación para evitar que el usuario postergue el inicio de su trámite consular.",
+        hook: '¿Te imaginas el <span class="kw">2027</span> arrancando con las <span class="kw">luces de Las Vegas, Nevada</span>?',
+        dev: '<span class="kw">Las ganas no bastan</span> si dejas el trámite para después. Si estás pensando en viajar a <span class="kw">Estados Unidos o México</span>, en <span class="kw">GLOBAL VISA</span> evaluamos tu perfil para <span class="kw">identificar tu área más fuerte</span> y te acompañamos <span class="kw">paso a paso</span> para que llegues bien preparado a tu cita consular.',
+        close: 'Con <span class="kw">10 años de experiencia</span>, te atendemos en la <span class="kw">3ra avenida 10-80, Zona 10, Edificio Forum Zona Viva</span>, o escríbenos al <span class="kw">5433-0484</span>. <span class="kw">GLOBAL VISA: conectamos sueños, cruzamos fronteras</span>.'
+      },
+      {
+        id: 6,
+        code: "VIDEO 06",
+        title: "Caso de éxito (+3 rechazos previos)",
+        duration: "28 – 32 segundos",
+        devTime: "4 – 22 seg",
+        closeTime: "22 – 32 seg",
+        focus: "Prueba social y autoridad técnica demostrando cómo una reestructuración estratégica revierte rechazos previos.",
+        hook: 'A ella le negaron la visa <span class="kw">más de tres veces</span>… hasta que <span class="kw">dejó de intentarlo a ciegas</span>.',
+        dev: 'Llegó con nosotros convencida de que su caso ya no tenía arreglo después de tantos rechazos, pero <span class="kw">el problema no era ella</span>, sino <span class="kw">cómo estaba presentando su perfil</span>. En <span class="kw">GLOBAL VISA</span> analizamos su <span class="kw">historial completo</span>, corregimos lo que estaba jugando en su contra, <span class="kw">reestructuramos su formulario</span> y la preparamos para cada pregunta de la entrevista. Hoy ya tiene su <span class="kw">visa aprobada en mano</span>.',
+        close: 'Con <span class="kw">10 años de experiencia</span>, te atendemos en la <span class="kw">3ra avenida 10-80, Zona 10, Edificio Forum Zona Viva</span>, o contáctanos al <span class="kw">5433-0484</span>. <span class="kw">GLOBAL VISA: conectamos sueños, cruzamos fronteras</span>.'
+      },
+      {
+        id: 7,
+        code: "VIDEO 07",
+        title: "Mentalidad: \"El próximo año salgo del país\"",
+        duration: "26 – 30 segundos",
+        devTime: "4 – 20 seg",
+        closeTime: "20 – 30 seg",
+        focus: "Confrontación directa contra la procrastinación de fin de año para activar la decisión hoy mismo.",
+        hook: '¿<span class="kw">Cuántos años llevas diciendo</span> "<span class="kw">el próximo año sí salgo del país</span>"?',
+        dev: '<span class="kw">Diciembre llega volando</span> y si no arrancas tu trámite hoy, el <span class="kw">2027</span> va a ser otro año viendo viajes <span class="kw">desde el teléfono</span>. Ya sea que quieras ir a <span class="kw">Estados Unidos o México</span>, en <span class="kw">GLOBAL VISA</span> evaluamos tu perfil <span class="kw">desde cero</span> para identificar tu <span class="kw">punto más fuerte</span> y guiarte paso a paso para que ese viaje deje de ser solo una <span class="kw">frase repetida</span>.',
+        close: 'Respaldados por <span class="kw">10 años de trayectoria</span>, te esperamos en <span class="kw">Edificio Forum Zona Viva, 3ra avenida 10-80, Zona 10</span>, o escríbenos al <span class="kw">5433-0484</span>. <span class="kw">GLOBAL VISA: conectamos sueños, cruzamos fronteras</span>.'
+      },
+      {
+        id: 8,
+        code: "VIDEO 08",
+        title: "Servicio: Simulacro de entrevista consular",
+        duration: "25 – 28 segundos",
+        devTime: "4 – 18 seg",
+        closeTime: "18 – 28 seg",
+        focus: "Control emocional y entrenamiento práctico para dominar los dos minutos decisivos frente al cónsul.",
+        hook: 'Lo que más te hace perder la visa <span class="kw">no es tu papelería</span>, son los <span class="kw">nervios frente al cónsul</span>.',
+        dev: 'Puedes tener todo en orden, pero si <span class="kw">te trabas o dudas</span> en esos <span class="kw">dos minutos de entrevista</span>, todo se cae. Por eso en <span class="kw">GLOBAL VISA</span> realizamos un <span class="kw">simulacro real de entrevista consular</span> antes de tu cita para <span class="kw">Estados Unidos o México</span>, entrenándote con las <span class="kw">preguntas clave</span> para que respondas con <span class="kw">seguridad, claridad y sin improvisar</span>.',
+        close: 'Contamos con <span class="kw">10 años de experiencia</span>. Visítanos en la <span class="kw">3ra avenida 10-80, Zona 10, Edificio Forum Zona Viva</span>, o comunícate al <span class="kw">5433-0484</span>. <span class="kw">GLOBAL VISA: conectamos sueños, cruzamos fronteras</span>.'
+      },
+      {
+        id: 9,
+        code: "VIDEO 09",
+        title: "Qué hacer y qué NO hacer en la embajada",
+        duration: "32 – 36 segundos",
+        devTime: "4 – 26 seg",
+        closeTime: "26 – 36 seg",
+        focus: "Contenido educativo de alto valor con reglas críticas de coherencia, honestidad y brevedad en ventanilla.",
+        hook: '<span class="kw">Tres cosas</span> que te niegan la visa <span class="kw">al instante</span> y lo que <span class="kw">sí debes hacer</span>.',
+        dev: '<span class="kw">Primero: nunca mientas ni inventes ingresos</span>, el cónsul cruza todo con tu formulario. <span class="kw">Segundo: no des respuestas largas</span> ni cuentes historias que nadie te preguntó; <span class="kw">responde directo y al grano</span>. <span class="kw">Tercero: no vayas a improvisar</span>. Lo que sí debes hacer es tener claro tu <span class="kw">motivo de viaje</span>, tus <span class="kw">lazos en el país</span> y <span class="kw">practicar antes de llegar a la ventanilla</span>. En <span class="kw">GLOBAL VISA</span> te preparamos para que no caigas en ninguno de estos errores.',
+        close: 'Con <span class="kw">10 años de experiencia</span>, te atendemos en la <span class="kw">3ra avenida 10-80, Zona 10, Edificio Forum Zona Viva</span>, o contáctanos al <span class="kw">5433-0484</span>. <span class="kw">GLOBAL VISA: conectamos sueños, cruzamos fronteras</span>.'
+      },
+      {
+        id: 10,
+        code: "VIDEO 10",
+        title: "Tips clave antes de pedir tu visa",
+        duration: "26 – 30 segundos",
+        devTime: "4 – 20 seg",
+        closeTime: "20 – 30 seg",
+        focus: "Prevención financiera: proteger la inversión del solicitante validando vigencia y coherencia antes de pagar.",
+        hook: 'Si vas a pedir tu visa este año, <span class="kw">guarda estos tips</span> antes de <span class="kw">pagar un solo centavo</span>.',
+        dev: 'Antes de arrancar tu trámite para <span class="kw">Estados Unidos o México</span>, revisa que tu <span class="kw">pasaporte esté vigente</span> y que tu <span class="kw">perfil financiero y laboral tenga coherencia</span> con el viaje que planeas hacer. Muchos pierden su dinero por <span class="kw">aplicar en el momento equivocado</span> o sin saber cuál es su <span class="kw">punto más fuerte</span>. En <span class="kw">GLOBAL VISA</span> hacemos un <span class="kw">estudio previo de tu perfil</span> para decirte exactamente cómo avanzar con estrategia.',
+        close: 'Respaldados por <span class="kw">10 años de trayectoria</span>, te esperamos en <span class="kw">Edificio Forum Zona Viva, 3ra avenida 10-80, Zona 10</span>, o escríbenos al <span class="kw">5433-0484</span>. <span class="kw">GLOBAL VISA: conectamos sueños, cruzamos fronteras</span>.'
+      },
+      {
+        id: 11,
+        code: "VIDEO 11",
+        title: "Servicio: Llenado del formulario DS-160",
+        duration: "26 – 30 segundos",
+        devTime: "4 – 20 seg",
+        closeTime: "20 – 30 seg",
+        focus: "Precisión técnica: destacar que la decisión consular se construye desde la exactitud del formulario DS-160.",
+        hook: 'Tu visa americana se aprueba o se pierde <span class="kw">antes de entrar a la embajada</span>: en el <span class="kw">DS-160</span>.',
+        dev: 'Ese formulario es la <span class="kw">base de toda tu entrevista</span>; una <span class="kw">fecha mal puesta</span>, un <span class="kw">dato incompleto</span> o una <span class="kw">contradicción</span> con lo que dices en ventanilla es suficiente para que te digan que no. En <span class="kw">GLOBAL VISA</span> nos encargamos del <span class="kw">llenado profesional de tu formulario DS-160</span>, cuidando cada detalle para que tu perfil vaya <span class="kw">claro, coherente y sin errores</span> desde el inicio.',
+        close: 'Contamos con <span class="kw">10 años de experiencia</span>. Visítanos en la <span class="kw">3ra avenida 10-80, Zona 10, Edificio Forum Zona Viva</span>, o comunícate al <span class="kw">5433-0484</span>. <span class="kw">GLOBAL VISA: conectamos sueños, cruzamos fronteras</span>.'
+      },
+      {
+        id: 12,
+        code: "VIDEO 12",
+        title: "Giveaway Todo Incluido",
+        duration: "26 – 30 segundos",
+        devTime: "4 – 20 seg",
+        closeTime: "20 – 30 seg",
+        focus: "Crecimiento viral y captación masiva mediante dinámica clara de participación con incentivo de alto valor.",
+        hook: '¿Te imaginas ganarte tu <span class="kw">asesoría para la visa</span> y el <span class="kw">pago de aranceles totalmente gratis</span>?',
+        dev: 'En <span class="kw">GLOBAL VISA</span> lanzamos nuestro <span class="kw">Giveaway Todo Incluido</span> para que des el primer paso hacia ese viaje que tanto quieres. Participar es súper rápido: <span class="kw">sigue la página de GLOBAL VISA</span>, <span class="kw">repostea este post</span>, <span class="kw">súbelo a tus historias</span> y <span class="kw">menciona a cinco personas</span> en los comentarios. No dejes pasar la oportunidad de empezar tu trámite <span class="kw">sin gastar en asesoría ni aranceles</span>.',
+        close: 'Con <span class="kw">10 años de experiencia</span>, estamos ubicados en <span class="kw">Edificio Forum Zona Viva, 3ra avenida 10-80, Zona 10</span>, o contáctanos al <span class="kw">5433-0484</span>. <span class="kw">GLOBAL VISA: conectamos sueños, cruzamos fronteras</span>.'
+      }
+    ];
+
+    // Estado de la aplicación
+    let currentVideoId = 1;
+
+    // Referencias DOM
+    const videoListEl = document.getElementById('videoList');
+    const searchInputEl = document.getElementById('searchInput');
+    const videoBadgeEl = document.getElementById('videoBadge');
+    const videoDurationEl = document.getElementById('videoDuration');
+    const videoTitleEl = document.getElementById('videoTitle');
+    const videoFocusEl = document.getElementById('videoFocus');
+    const hookTextEl = document.getElementById('hookText');
+    const devTimeEl = document.getElementById('devTime');
+    const devTextEl = document.getElementById('devText');
+    const closeTimeEl = document.getElementById('closeTime');
+    const closeTextEl = document.getElementById('closeText');
+
+    // Función auxiliar para quitar etiquetas HTML en búsquedas
+    function stripHtml(html) {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html;
+      return tmp.textContent || tmp.innerText || '';
+    }
+
+    // Renderizar lista lateral de videos
+    function renderVideoList(filterText = '') {
+      const query = filterText.trim().toLowerCase();
+      videoListEl.innerHTML = '';
+
+      const filtered = VIDEOS_DATA.filter((v) => {
+        if (!query) return true;
+        const fullText = `${v.code} ${v.title} ${v.focus} ${stripHtml(v.hook)} ${stripHtml(v.dev)}`.toLowerCase();
+        return fullText.includes(query);
+      });
+
+      if (filtered.length === 0) {
+        videoListEl.innerHTML = `
+          <div class="text-center py-8 px-4 text-xs text-slate-500">
+            No se encontraron videos con "${filterText}".
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach((video) => {
+        const isActive = video.id === currentVideoId;
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `w-full text-left p-3 rounded-xl border transition-all flex items-start justify-between gap-2.5 cursor-pointer ${
+          isActive
+            ? 'bg-gradient-to-r from-sky-500/20 via-sky-500/10 to-transparent border-sky-400/60 shadow-md shadow-sky-500/10'
+            : 'bg-black/60 hover:bg-slate-900/90 border-slate-800/80 hover:border-sky-500/30'
+        }`;
+
+        btn.innerHTML = `
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[11px] font-mono font-bold ${isActive ? 'text-sky-300' : 'text-slate-400'}">
+                ${video.code}
+              </span>
+              <span class="text-[10px] font-mono text-slate-500">
+                ${video.duration}
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm font-medium truncate ${isActive ? 'text-white' : 'text-slate-300'}">
+              ${video.title}
+            </p>
+          </div>
+          <div class="shrink-0 mt-1">
+            <span class="inline-flex items-center justify-center w-5 h-5 rounded-full ${
+              isActive
+                ? 'bg-sky-500/20 text-sky-400 border border-sky-400/40'
+                : 'bg-slate-900 text-slate-600 border border-slate-800'
+            }">
+              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </span>
+          </div>
+        `;
+
+        btn.addEventListener('click', () => {
+          selectVideo(video.id);
+        });
+
+        videoListEl.appendChild(btn);
+      });
+    }
+
+    // Seleccionar y mostrar un video en el panel derecho
+    function selectVideo(id) {
+      currentVideoId = Number(id);
+      const video = VIDEOS_DATA.find((v) => v.id === currentVideoId) || VIDEOS_DATA[0];
+
+      videoBadgeEl.textContent = video.code;
+      videoDurationEl.textContent = video.duration;
+      videoTitleEl.textContent = video.title;
+      videoFocusEl.textContent = video.focus;
+
+      hookTextEl.innerHTML = video.hook;
+      devTimeEl.textContent = video.devTime;
+      devTextEl.innerHTML = video.dev;
+      closeTimeEl.textContent = video.closeTime;
+      closeTextEl.innerHTML = video.close;
+
+      const counterEl = document.getElementById('videoCounterLabel');
+      if (counterEl) {
+        counterEl.textContent = `${video.id} / ${VIDEOS_DATA.length}`;
+      }
+
+      renderVideoList(searchInputEl.value);
+    }
+
+    function goPrevVideo() {
+      const prevId = currentVideoId > 1 ? currentVideoId - 1 : VIDEOS_DATA.length;
+      selectVideo(prevId);
+    }
+
+    function goNextVideo() {
+      const nextId = currentVideoId < VIDEOS_DATA.length ? currentVideoId + 1 : 1;
+      selectVideo(nextId);
+    }
+
+    // Botones Anterior y Siguiente (superiores e inferiores)
+    document.getElementById('prevVideoBtnTop').addEventListener('click', goPrevVideo);
+    document.getElementById('nextVideoBtnTop').addEventListener('click', goNextVideo);
+    document.getElementById('prevVideoBtnBottom').addEventListener('click', goPrevVideo);
+    document.getElementById('nextVideoBtnBottom').addEventListener('click', goNextVideo);
+
+    // Navegación también con flechas del teclado (Izquierda / Derecha)
+    document.addEventListener('keydown', (e) => {
+      if (document.activeElement === searchInputEl) return;
+      if (e.key === 'ArrowLeft') goPrevVideo();
+      if (e.key === 'ArrowRight') goNextVideo();
+    });
+
+    // Buscador en tiempo real
+    searchInputEl.addEventListener('input', (e) => {
+      renderVideoList(e.target.value);
+    });
+
+    // Inicialización
+    selectVideo(1);
+  </script>
+</body>
+</html>
